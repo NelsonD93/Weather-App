@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,14 @@
     <title>Check the Weather</title>
     <link rel="stylesheet" href="./assets/styles.css">
 </head>
+
 <body>
     <header class="w3-light-blue">
         <h1 class="w3-center">Weather Dashboard</h1>
     </header>
     <div class="w3-container w3-padding-16 w3-border w3-border-black w3-cell">
         <h3>Search for a city</h3>
-        <input id="searchCity"/>
+        <input id="searchCity" />
         <button id="submitBtn">Submit</button>
     </div>
     <div id="today" class="w3-center w3-cell w3-border w3-border-black">
@@ -24,13 +26,17 @@
     </div>
     <div class="w3-cell-row w3-center w3-border w3-border-black">
         5-day forecast
-        <div id="fiveDayWeather"> Parent Div
-            <div>
-                Child Div 1
-            </div>
+        <div class="w3-border w3-border-black" id="fiveDayWeather">
+            <span id="dayOne">
+                Tomorrow's Weather
+                <h2 class="city"></h2>
+                <h3 id="tomorrowWeather"></h3>
+            </span>
+            <span id="dayTwo">Day 2 weather</span>
 
         </div>
     </div>
     <script src="./assets/script.js"></script>
 </body>
+
 </html>

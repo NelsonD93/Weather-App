@@ -1,3 +1,7 @@
 #today {
     height: auto;
 }
+
+#fiveDayWeather {
+    text-align: left;
+}
