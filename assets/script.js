@@ -52,8 +52,29 @@ function displayCurrentWeather(data) {
 }
 
 function displayDailyForecast(data) {
-    var day1Forecast = document.querySelector('#tomorrowWeather');
-    var city = document.querySelector('.city');
-    city.textContent = searchCity.value;
+    var day1Forecast = document.querySelector('#day1Weather');
+    var day2Forecast = document.querySelector('#day2Weather');
+    var day3Forecast = document.querySelector('#day3Weather');
+    var day4Forecast = document.querySelector('#day4Weather');
+    var day5Forecast = document.querySelector('#day5Weather');
+    // var city = document.querySelector('.city');
+    // Variables for city caption
+    var city1 = document.querySelector('#day1City')
+    var city2 = document.querySelector('#day2City')
+    var city3 = document.querySelector('#day3City')
+    var city4 = document.querySelector('#day4City')
+    var city5 = document.querySelector('#day5City')
+//  Setting content of HTML to searched city
+    city1.textContent = searchCity.value
+    city2.textContent = searchCity.value
+    city3.textContent = searchCity.value
+    city4.textContent = searchCity.value
+    city5.textContent = searchCity.value
+    // city.textContent = searchCity.value;
+    // Setting content of HTML to temperature
     day1Forecast.textContent = data.daily[1].temp.day;
+    day2Forecast.textContent = data.daily[2].temp.day;
+    day3Forecast.textContent = data.daily[3].temp.day;
+    day4Forecast.textContent = data.daily[4].temp.day;
+    day5Forecast.textContent = data.daily[5].temp.day;
 }

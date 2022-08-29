@@ -5,3 +5,8 @@
 #fiveDayWeather {
     text-align: left;
 }
+
+#forecastContainer {
+    display: flex;
+    flex-direction: row;
+}
