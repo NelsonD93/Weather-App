@@ -3,7 +3,8 @@ var searchCity = document.querySelector('#searchCity');
 var lastSearch = document.querySelector('#lastSearch');
 var storedCities = localStorage.getItem('lastCity')
 var apiKey = "4024dd0ace3444c4f05da7654e63fece"
-var weekdays = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+var weekdays = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var uvImages = document.querySelector('.uvIndex')
 
 
 
@@ -70,6 +71,11 @@ function displayDailyForecast(data) {
     var city3 = document.querySelector('#day3City')
     var city4 = document.querySelector('#day4City')
     var city5 = document.querySelector('#day5City')
+    var uv1 = document.querySelector('#uvIndex1')
+    var uv2 = document.querySelector('#uvIndex2')
+    var uv3 = document.querySelector('#uvIndex3')
+    var uv4 = document.querySelector('#uvIndex4')
+    var uv5 = document.querySelector('#uvIndex5')
 //  Setting content of HTML to searched city
     city1.textContent = searchCity.value
     city2.textContent = searchCity.value
@@ -83,4 +89,9 @@ function displayDailyForecast(data) {
     day3Forecast.textContent = data.daily[3].temp.day;
     day4Forecast.textContent = data.daily[4].temp.day;
     day5Forecast.textContent = data.daily[5].temp.day;
+    uv1.textContent = 'UV: ' + data.daily[1].uvi;
+    uv2.textContent = 'UV: ' + data.daily[2].uvi;
+    uv3.textContent = 'UV: ' + data.daily[3].uvi;
+    uv4.textContent = 'UV: ' + data.daily[4].uvi;
+    uv5.textContent = 'UV: ' + data.daily[5].uvi;
 }
