@@ -5,8 +5,12 @@ var storedCities = localStorage.getItem('lastCity')
 var apiKey = "4024dd0ace3444c4f05da7654e63fece"
 var weekdays = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 var uvImages = document.querySelector('.uvIndex')
+var uvScale = 
 
-
+for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    
+}
 
 submitBtn.addEventListener("click", function () {
     var cityName = searchCity.value;
@@ -95,3 +99,11 @@ function displayDailyForecast(data) {
     uv4.textContent = 'UV: ' + data.daily[4].uvi;
     uv5.textContent = 'UV: ' + data.daily[5].uvi;
 }
+
+console.log(data.daily[1].uvi)
+
+// if (data.value === 2 || 1 || 0) {
+    
+// } else {
+    
+// }
