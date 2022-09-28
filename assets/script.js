@@ -1,11 +1,18 @@
 var submitBtn = document.querySelector('#submitBtn');
 var searchCity = document.querySelector('#searchCity');
 var lastSearch = document.querySelector('#lastSearch');
-var storedCities = localStorage.getItem('lastCity')
+// var storedCities = localStorage.getItem('lastCity')
 var apiKey = "4024dd0ace3444c4f05da7654e63fece"
 var weekdays = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 var uvImages = document.querySelector('.uvIndex')
-var uvScale = 
+// var uvScale = 
+
+var cities = [];
+
+localStorage.setItem("cities", JSON.stringify(cities));
+
+//retrieve cities from localstorage
+var storedCities = JSON.parse(localStorage.getItem("cities"));
 
 for (let i = 0; i < array.length; i++) {
     const element = array[i];
