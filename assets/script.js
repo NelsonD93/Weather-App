@@ -14,10 +14,10 @@ localStorage.setItem("cities", JSON.stringify(cities));
 //retrieve cities from localstorage
 var storedCities = JSON.parse(localStorage.getItem("cities"));
 
-for (let i = 0; i < array.length; i++) {
-    const element = array[i];
+// for (let i = 0; i < array.length; i++) {
+//     const element = array[i];
     
-}
+// }
 
 submitBtn.addEventListener("click", function () {
     var cityName = searchCity.value;
