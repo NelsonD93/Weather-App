@@ -1,12 +1,11 @@
 var submitBtn = document.querySelector('#submitBtn');
 var searchCity = document.querySelector('#searchCity');
 var lastSearch = document.querySelector('#lastSearch');
-// var storedCities = localStorage.getItem('lastCity')
+var storedCities = localStorage.getItem('lastCity')
 var apiKey = "4024dd0ace3444c4f05da7654e63fece"
 var weekdays = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 var uvImages = document.querySelector('.uvIndex');
-import moment from 'moment';
-moment().format();
+
 
 
 // var uvScale = 
@@ -74,7 +73,11 @@ function displayCurrentWeather(data) {
 }
 
 function displayDailyForecast(data) {
-    moment().utc(data.daily[i].dt)
+    var weekday1 = document.querySelector('#weekday1');
+    var weekday1 = document.querySelector('#weekday2');
+    var weekday1 = document.querySelector('#weekday3');
+    var weekday1 = document.querySelector('#weekday4');
+    var weekday1 = document.querySelector('#weekday5');
     var day1Forecast = document.querySelector('#day1Weather');
     var day2Forecast = document.querySelector('#day2Weather');
     var day3Forecast = document.querySelector('#day3Weather');
@@ -110,9 +113,14 @@ function displayDailyForecast(data) {
     uv3.textContent = 'UV: ' + data.daily[3].uvi;
     uv4.textContent = 'UV: ' + data.daily[4].uvi;
     uv5.textContent = 'UV: ' + data.daily[5].uvi;
+    weekday1.textContent = moment().utc(data.daily[1].dt).format('dddd')
+    weekday2.textContent = moment().utc(data.daily[2].dt).format('dddd')
+    weekday3.textContent = moment().utc(data.daily[3].dt).format('dddd')
+    weekday4.textContent = moment().utc(data.daily[4].dt).format('dddd')
+    weekday5.textContent = moment().utc(data.daily[5].dt).format('dddd')
 }
 
-console.log(data.daily[1].uvi)
+
 
 // if (data.value === 2 || 1 || 0) {
     
