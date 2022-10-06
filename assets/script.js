@@ -74,10 +74,10 @@ function displayCurrentWeather(data) {
 
 function displayDailyForecast(data) {
     var weekday1 = document.querySelector('#weekday1');
-    var weekday1 = document.querySelector('#weekday2');
-    var weekday1 = document.querySelector('#weekday3');
-    var weekday1 = document.querySelector('#weekday4');
-    var weekday1 = document.querySelector('#weekday5');
+    var weekday2 = document.querySelector('#weekday2');
+    var weekday3 = document.querySelector('#weekday3');
+    var weekday4 = document.querySelector('#weekday4');
+    var weekday5 = document.querySelector('#weekday5');
     var day1Forecast = document.querySelector('#day1Weather');
     var day2Forecast = document.querySelector('#day2Weather');
     var day3Forecast = document.querySelector('#day3Weather');
