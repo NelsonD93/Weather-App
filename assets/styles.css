@@ -12,3 +12,9 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+body {
+    background: rgb(9,81,112);
+    background: linear-gradient(180deg, rgba(9,81,112,1) 8%, rgba(9,104,116,1) 26%);
+    color: black;
+}

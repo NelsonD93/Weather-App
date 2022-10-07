@@ -17,8 +17,15 @@ var cities = [];
 
 localStorage.setItem("cities", JSON.stringify(cities));
 
+for (let index = 0; index < cities.length; index++) {
+    const element = array[index];
+    
+}
+
 //retrieve cities from localstorage
 var storedCities = JSON.parse(localStorage.getItem("cities"));
+
+console.log(cities)
 
 submitBtn.addEventListener("click", function () {
     var cityName = searchCity.value;
@@ -120,11 +127,11 @@ function displayDailyForecast(data) {
     let day3Wind = document.getElementById('day3Wind');
     let day4Wind = document.getElementById('day4Wind');
     let day5Wind = document.getElementById('day5Wind');
-    let day1Humidity = document.getElementById('day1Wind');
-    let day2Humidity = document.getElementById('day2Wind');
-    let day3Humidity = document.getElementById('day3Wind');
-    let day4Humidity = document.getElementById('day4Wind');
-    let day5Humidity = document.getElementById('day5Wind');
+    let day1Humidity = document.getElementById('day1Humidity');
+    let day2Humidity = document.getElementById('day2Humidity');
+    let day3Humidity = document.getElementById('day3Humidity');
+    let day4Humidity = document.getElementById('day4Humidity');
+    let day5Humidity = document.getElementById('day5Humidity');
     //  Setting content of HTML to searched city
     city1.textContent = searchCity.value
     city2.textContent = searchCity.value
@@ -152,11 +159,11 @@ function displayDailyForecast(data) {
     day3Wind.textContent = "Wind: " + Math.floor(data.daily[3].wind_speed * 2.23694) + " MPH"
     day4Wind.textContent = "Wind: " + Math.floor(data.daily[4].wind_speed * 2.23694) + " MPH"
     day5Wind.textContent = "Wind: " + Math.floor(data.daily[5].wind_speed * 2.23694) + " MPH"
-    day1Humidity.textContent = "Humdity:" + data.daily[1].humidity + "%"
-    day2Humidity.textContent = "Humdity:" + data.daily[2].humidity + "%"
-    day3Humidity.textContent = "Humdity:" + data.daily[3].humidity + "%"
-    day4Humidity.textContent = "Humdity:" + data.daily[4].humidity + "%"
-    day5Humidity.textContent = "Humdity:" + data.daily[5].humidity + "%"
+    day1Humidity.textContent = "Humdity: " + data.daily[1].humidity + "%"
+    day2Humidity.textContent = "Humdity: " + data.daily[2].humidity + "%"
+    day3Humidity.textContent = "Humdity: " + data.daily[3].humidity + "%"
+    day4Humidity.textContent = "Humdity: " + data.daily[4].humidity + "%"
+    day5Humidity.textContent = "Humdity: " + data.daily[5].humidity + "%"
 }
 
 function displayUV1(data) {
