@@ -69,10 +69,23 @@ function getWeather(lat, lon) {
 
 function displayCurrentWeather(data) {
     var cityH2 = document.querySelector("#cityName");
+    var todayMax = document.querySelector("#todayMax");
+    var todayMin = document.querySelector("#todayMin");
+    var todayUV = document.getElementById('todayUV')
     cityH2.textContent = searchCity.value;
-
-    var tempH3 = document.querySelector("#temp");
-    tempH3.textContent = data.current.temp
+    todayMax.textContent = "High: " + data.daily[0].temp.max + "°F"
+    todayMin.textContent = "Low: " + data.daily[0].temp.min + "°F"
+    if (data.daily[0].uvi <= 2) {
+        todayUV.src = "assets/uvscale/uvi-low.jpeg"
+    } else if (data.daily[0].uvi > 2 && data.daily[0].uvi < 5) {
+        todayUV.src = "assets/uvscale/uvi-moderate.jpeg"
+    } else if (data.daily[0].uvi > 5 && data.daily[0].uvi < 8) {
+        todayUV.src = "assets/uvscale/uvi-high.jpeg"
+    } else if (data.daily[0].uvi >= 8 && data.daily[0].uvi <= 10) {
+        todayUV.src = "assets/uvscale/uvi-veryhigh.jpeg"
+    } else {
+        todayUV.src = "assets/uvscale/uvi-extreme.jpeg"
+    }
 }
 
 function displayDailyForecast(data) {
@@ -102,6 +115,16 @@ function displayDailyForecast(data) {
     let day3 = moment().add(3, "days").format('dddd');
     let day4 = moment().add(4, "days").format('dddd');
     let day5 = moment().add(5, "days").format('dddd');
+    let day1Wind = document.getElementById('day1Wind');
+    let day2Wind = document.getElementById('day2Wind');
+    let day3Wind = document.getElementById('day3Wind');
+    let day4Wind = document.getElementById('day4Wind');
+    let day5Wind = document.getElementById('day5Wind');
+    let day1Humidity = document.getElementById('day1Wind');
+    let day2Humidity = document.getElementById('day2Wind');
+    let day3Humidity = document.getElementById('day3Wind');
+    let day4Humidity = document.getElementById('day4Wind');
+    let day5Humidity = document.getElementById('day5Wind');
     //  Setting content of HTML to searched city
     city1.textContent = searchCity.value
     city2.textContent = searchCity.value
@@ -124,6 +147,16 @@ function displayDailyForecast(data) {
     weekday3.textContent = day3;
     weekday4.textContent = day4;
     weekday5.textContent = day5;
+    day1Wind.textContent = "Wind: " + Math.floor(data.daily[1].wind_speed * 2.23694) + " MPH"
+    day2Wind.textContent = "Wind: " + Math.floor(data.daily[2].wind_speed * 2.23694) + " MPH"
+    day3Wind.textContent = "Wind: " + Math.floor(data.daily[3].wind_speed * 2.23694) + " MPH"
+    day4Wind.textContent = "Wind: " + Math.floor(data.daily[4].wind_speed * 2.23694) + " MPH"
+    day5Wind.textContent = "Wind: " + Math.floor(data.daily[5].wind_speed * 2.23694) + " MPH"
+    day1Humidity.textContent = "Humdity:" + data.daily[1].humidity + "%"
+    day2Humidity.textContent = "Humdity:" + data.daily[2].humidity + "%"
+    day3Humidity.textContent = "Humdity:" + data.daily[3].humidity + "%"
+    day4Humidity.textContent = "Humdity:" + data.daily[4].humidity + "%"
+    day5Humidity.textContent = "Humdity:" + data.daily[5].humidity + "%"
 }
 
 function displayUV1(data) {
