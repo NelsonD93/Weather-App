@@ -5,7 +5,9 @@ var storedCities = localStorage.getItem('lastCity')
 const apiKey = "4024dd0ace3444c4f05da7654e63fece"
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const uvImages = document.querySelector('.uvIndex');
-const uvModerate = "<img src=./assets/uvscale/uvi-moderate.jpeg"
+const uvModerate = "/assets/uvscale/uvi-moderate.jpeg"
+const uvI = document.getElementById('uv1');
+uvI.src = "assets/uvscale/uvi-moderate.jpeg"
 
 
 
@@ -132,7 +134,7 @@ function displayUV(data) {
     if (data.daily[1].uvi <= 2) {
         uv1.textContent = 'low'
     } else if (data.daily[1].uvi > 2 && data.daily[1].uvi < 5) {
-        uv1.src = uvModerate
+        uvI.src
     } else if (data.daily[1].uvi > 5 && data.daily[1].uvi < 8) {
         uv1.textContent = 'high'
     } else if (data.daily[1].uvi >= 8 && data.daily[1].uvi <= 10) {
@@ -141,3 +143,4 @@ function displayUV(data) {
         uv1.textContent = 'extreme'
     }
 }
+
