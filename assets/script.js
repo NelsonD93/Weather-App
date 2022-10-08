@@ -1,11 +1,12 @@
 const submitBtn = document.querySelector('#submitBtn');
+const clearBtn = document.getElementById('clearBtn');
 const searchCity = document.querySelector('#searchCity');
 const lastSearch = document.querySelector('#lastSearch');
-var storedCities = localStorage.getItem('lastCity')
-const apiKey = "4024dd0ace3444c4f05da7654e63fece"
+var storedCities = localStorage.getItem('lastCity');
+const apiKey = "4024dd0ace3444c4f05da7654e63fece";
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const uvImages = document.querySelector('.uvIndex');
-const uvModerate = "/assets/uvscale/uvi-moderate.jpeg"
+const uvModerate = "/assets/uvscale/uvi-moderate.jpeg";
 const uvI = document.getElementById('uv1');
 const uvI2 = document.getElementById('uv2');
 const uvI3 = document.getElementById('uv3');
@@ -24,6 +25,11 @@ const uvI5 = document.getElementById('uv5');
 
 //retrieve cities from localstorage
 var storedCities = JSON.parse(localStorage.getItem("cities")) || [];
+
+clearBtn.addEventListener('click', function(){
+    localStorage.clear();
+    alert('Please refresh the page to remove search history from screen.')
+})
 
 submitBtn.addEventListener("click", function () {
     var cityName = searchCity.value;
@@ -234,3 +240,5 @@ function displayUV5(data) {
         uvI5.src = "assets/uvscale/uvi-extreme.jpeg"
     }
 }
+
+document.getElementById('links').setAttribute('href', lastSearch.value);
