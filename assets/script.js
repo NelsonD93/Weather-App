@@ -26,11 +26,6 @@ const uvI5 = document.getElementById('uv5');
 //retrieve cities from localstorage
 var storedCities = JSON.parse(localStorage.getItem("cities")) || [];
 
-clearBtn.addEventListener('click', function(){
-    localStorage.clear();
-    alert('Please refresh the page to remove search history from screen.')
-})
-
 submitBtn.addEventListener("click", function () {
     var cityName = searchCity.value;
     geoLocation(cityName);
@@ -39,6 +34,11 @@ submitBtn.addEventListener("click", function () {
     storedCities.push(searchCity.value)
 
 })
+
+clearBtn.addEventListener('click', function(){
+    localStorage.clear();
+    alert('Please refresh the page to remove search history from screen.')
+});
 
 
 function geoLocation(cityName) {
@@ -241,4 +241,10 @@ function displayUV5(data) {
     }
 }
 
-document.getElementById('links').setAttribute('href', lastSearch.value);
+for (let index = 0; index < cities.length; index++) {
+    const element = cities[index];
+    let btn = document.createElement('button');
+    btn.textContent = cities.value;
+    document.body.appendChild(btn)
+
+}
