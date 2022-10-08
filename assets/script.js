@@ -13,25 +13,24 @@ const uvI4 = document.getElementById('uv4');
 const uvI5 = document.getElementById('uv5');
 
 
-var cities = [];
+// var cities = [];
 
-localStorage.setItem("cities", JSON.stringify(cities));
+// localStorage.setItem("cities", JSON.stringify(cities));
 
-for (let index = 0; index < cities.length; index++) {
-    const element = array[index];
-    
-}
+// for (let index = 0; index < cities.length; index++) {
+//     const element = array[index];
+
+// }
 
 //retrieve cities from localstorage
-var storedCities = JSON.parse(localStorage.getItem("cities"));
-
-console.log(cities)
+var storedCities = JSON.parse(localStorage.getItem("cities")) || [];
 
 submitBtn.addEventListener("click", function () {
     var cityName = searchCity.value;
     geoLocation(cityName);
-    localStorage.setItem('lastCity', JSON.stringify(searchCity.value));
+    localStorage.setItem('cities', JSON.stringify(storedCities));
     lastSearch.textContent = storedCities;
+    storedCities.push(searchCity.value)
 
 })
 
