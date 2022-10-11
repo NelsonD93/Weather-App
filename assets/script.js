@@ -241,10 +241,17 @@ function displayUV5(data) {
     }
 }
 
-for (let index = 0; index < cities.length; index++) {
-    const element = cities[index];
+for (let index = 0; index < storedCities.length; index++) {
+    let element = storedCities[index];
     let btn = document.createElement('button');
-    btn.textContent = cities.value;
-    document.body.appendChild(btn)
-
+    btn.className = 'cityButtons';
+    let btnClass = document.querySelectorAll('.cityButtons')
+    btn.textContent = storedCities[index];
+    console.log(btn)
+    document.body.append(btn)
+    btn.addEventListener('click', function(){
+    console.log('Hello world')
+    getWeather(element)
+    })
 }
+
