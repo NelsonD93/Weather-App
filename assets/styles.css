@@ -14,11 +14,18 @@
 }
 
 body {
-    background: rgb(20,197,232);
-    background: linear-gradient(180deg, rgba(20,197,232,1) 8%, rgba(93,232,250,1) 26%);
+    background: rgb(20, 197, 232);
+    background: linear-gradient(180deg, rgba(20, 197, 232, 1) 8%, rgba(93, 232, 250, 1) 26%);
 }
 
 .cityButtons {
     display: flex;
     text-align: right;
+}
+
+#scale {
+    display: flex;
+    width: auto;
+    float: right;
+    height: 200px;
 }

@@ -251,7 +251,7 @@ for (let index = 0; index < storedCities.length; index++) {
     document.body.append(btn)
     btn.addEventListener('click', function(){
     console.log('Hello world')
-    getWeather(element)
+    geoLocation(element)
     })
 }
 
