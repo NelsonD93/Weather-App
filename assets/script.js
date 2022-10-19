@@ -1,7 +1,6 @@
 const submitBtn = document.querySelector('#submitBtn');
 const clearBtn = document.getElementById('clearBtn');
 const searchCity = document.querySelector('#searchCity');
-const lastSearch = document.querySelector('#lastSearch');
 var storedCities = localStorage.getItem('lastCity');
 const apiKey = "4024dd0ace3444c4f05da7654e63fece";
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -14,26 +13,23 @@ const uvI4 = document.getElementById('uv4');
 const uvI5 = document.getElementById('uv5');
 
 
-// var cities = [];
-
-// localStorage.setItem("cities", JSON.stringify(cities));
-
-// for (let index = 0; index < cities.length; index++) {
-//     const element = array[index];
-
-// }
-
 //retrieve cities from localstorage
 var storedCities = JSON.parse(localStorage.getItem("cities")) || [];
 
 submitBtn.addEventListener("click", function () {
     var cityName = searchCity.value;
     geoLocation(cityName);
-    localStorage.setItem('cities', JSON.stringify(storedCities));
-    lastSearch.textContent = storedCities;
     storedCities.push(searchCity.value)
+    localStorage.setItem('cities', JSON.stringify(storedCities));
+    let element = storedCities[storedCities.length - 1];
+    let btn = document.createElement('button');
+    btn.className = 'cityButtons';
+    btn.textContent = storedCities[storedCities.length - 1];
+    document.body.append(btn)
+    btn.addEventListener('click', function(){
+    geoLocation(element)
 
-})
+})})
 
 clearBtn.addEventListener('click', function(){
     localStorage.clear();
@@ -247,11 +243,8 @@ for (let index = 0; index < storedCities.length; index++) {
     btn.className = 'cityButtons';
     let btnClass = document.querySelectorAll('.cityButtons')
     btn.textContent = storedCities[index];
-    console.log(btn)
-    document.body.append(btn)
+    document.body.append(btn);
     btn.addEventListener('click', function(){
-    console.log('Hello world')
     geoLocation(element)
     })
 }
-

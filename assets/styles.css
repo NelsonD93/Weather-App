@@ -29,3 +29,9 @@ body {
     float: right;
     height: 200px;
 }
+
+.cityButtons {
+    display: flex;
+    
+    float:top;
+}
