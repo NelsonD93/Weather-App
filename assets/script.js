@@ -38,7 +38,7 @@ clearBtn.addEventListener('click', function(){
 
 
 function geoLocation(cityName) {
-    var geoCodeApi = 'http://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&limit=1&appid=' + apiKey;
+    var geoCodeApi = 'https://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&limit=1&appid=' + apiKey;
 
     console.log(geoCodeApi)
 
