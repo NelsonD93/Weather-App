@@ -74,7 +74,7 @@ function getWeather(lat, lon) {
 }
 
 
-
+// Displays current weather for searched city
 function displayCurrentWeather(data) {
     var cityH2 = document.querySelector("#cityName");
     var todayMax = document.querySelector("#todayMax");
@@ -96,6 +96,7 @@ function displayCurrentWeather(data) {
     }
 }
 
+// Function for 5-day forecast
 function displayDailyForecast(data) {
     let weekday1 = document.querySelector('#weekday1');
     let weekday2 = document.querySelector('#weekday2');
@@ -166,7 +167,7 @@ function displayDailyForecast(data) {
     day4Humidity.textContent = "Humdity: " + data.daily[4].humidity + "%"
     day5Humidity.textContent = "Humdity: " + data.daily[5].humidity + "%"
 }
-
+// Series of functions displaying the UV index for the given day
 function displayUV1(data) {
     if (data.daily[1].uvi <= 2) {
         uvI.src = "assets/uvscale/uvi-low.jpeg"
